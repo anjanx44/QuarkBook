@@ -1,4 +1,4 @@
-package com.anjanx44;
+package org.anjanx44.userservice;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.Entity;

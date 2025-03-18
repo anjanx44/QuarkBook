@@ -1,4 +1,4 @@
-package com.anjanx44;
+package org.anjanx44.userservice;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
@@ -7,7 +7,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
 
 @QuarkusTest
-class ExampleResourceTest {
+class GreetingResourceTest {
     @Test
     void testHelloEndpoint() {
         given()
