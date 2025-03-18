@@ -2,11 +2,14 @@
 quarkus:
   http:
     port: 8080
+
   dev:
     hot-reload:
       enabled: true
+
     live-reload:
       enabled: true
+
   security:
     enabled: true
 
@@ -25,16 +28,15 @@ quarkus:
       sql: true
       #    dialect: org.hibernate.dialect.PostgreSQLDialect
 
-  # JWT Configuration
-  smallrye-jwt:
-    # JWT configuration settings
-    public-key-location: classpath:publicKey.pem
-    issuer: your-issuer
-    # Additional JWT configuration (optional)
-    groups-claim: groups
-    path-to-jwt: /path/to/jwt
-    # Optional configuration to validate the JWT audience
-    audience: your-audience
+    # JWT configuration using a secret key for signing and verifying the token
+  mp:
+    jwt:
+      signer:
+        secret:
+          key: "V4g6v6Y3f7s2tBxZy8S5Rrz9EdR5KQ0Qf7IcYH0g7Jk="  # Secret key used for signing JWT tokens
+      verify:
+        issuer: "my-auth-server"  # Set the issuer (your authentication server)
+        audience: "my-api"
 
     # Logging Configuration (Optional)
     quarkus:
