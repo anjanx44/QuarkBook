@@ -9,7 +9,7 @@ import org.anjanx44.userservice.service.UserService;
 
 import java.util.Optional;
 
-@Path("/users")
+@Path("/api/users")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 @RequiredArgsConstructor

@@ -9,14 +9,14 @@ quarkus:
 
     live-reload:
       enabled: true
-
-  security:
-    enabled: true
+#
+#  security:
+#    enabled: true
 
   datasource:
     db-kind: postgresql
     username: postgres
-    password: 4796
+    password: 47Ayan96
     jdbc:
       url: jdbc:postgresql://localhost:5432/user_service_db
 
@@ -29,14 +29,14 @@ quarkus:
       #    dialect: org.hibernate.dialect.PostgreSQLDialect
 
     # JWT configuration using a secret key for signing and verifying the token
-  mp:
-    jwt:
-      signer:
-        secret:
-          key: "V4g6v6Y3f7s2tBxZy8S5Rrz9EdR5KQ0Qf7IcYH0g7Jk="  # Secret key used for signing JWT tokens
-      verify:
-        issuer: "my-auth-server"  # Set the issuer (your authentication server)
-        audience: "my-api"
+#  mp:
+#    jwt:
+#      signer:
+#        secret:
+#          key: "V4g6v6Y3f7s2tBxZy8S5Rrz9EdR5KQ0Qf7IcYH0g7Jk="  # Secret key used for signing JWT tokens
+#      verify:
+#        issuer: "my-auth-server"  # Set the issuer (your authentication server)
+#        audience: "my-api"
 
     # Logging Configuration (Optional)
     quarkus:
