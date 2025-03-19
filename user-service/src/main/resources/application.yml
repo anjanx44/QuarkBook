@@ -16,7 +16,7 @@ quarkus:
   datasource:
     db-kind: postgresql
     username: postgres
-    password: 47Ayan96
+    password: 4796
     jdbc:
       url: jdbc:postgresql://localhost:5432/user_service_db
 

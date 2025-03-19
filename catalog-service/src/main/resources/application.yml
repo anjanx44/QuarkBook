@@ -1,0 +1,32 @@
+# Database Configuration
+quarkus:
+  http:
+    port: 8081
+
+  dev:
+    hot-reload:
+      enabled: true
+    live-reload:
+      enabled: true
+
+  datasource:
+    db-kind: postgresql
+    username: postgres
+    password: 4796
+    jdbc:
+      url: jdbc:postgresql://localhost:5432/catalog_service_db  # Updated database name
+
+  # Hibernate ORM Configuration
+  hibernate-orm:
+    database:
+      generation: update
+    log:
+      sql: true
+
+  # Logging Configuration (Optional)
+  log:
+    console:
+      level: INFO
+    category:
+      io:
+        quarkus: TRACE
