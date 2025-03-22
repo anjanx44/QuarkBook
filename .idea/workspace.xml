@@ -4,26 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7971d67c-ef6e-415e-94d5-37f56590d4d0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="7971d67c-ef6e-415e-94d5-37f56590d4d0" name="Changes" comment="config updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog-service/.dockerignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog-service/src/main/docker/Dockerfile.jvm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog-service/src/main/docker/Dockerfile.legacy-jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog-service/src/main/docker/Dockerfile.native" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog-service/src/main/docker/Dockerfile.native-micro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/.dockerignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/docker/Dockerfile.jvm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/docker/Dockerfile.legacy-jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/docker/Dockerfile.native" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/docker/Dockerfile.native-micro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/org/anjanx44/userservice/GreetingResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/org/anjanx44/userservice/MyEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/org/anjanx44/userservice/MyEntityResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/org/anjanx44/userservice/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/org/anjanx44/userservice/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/org/anjanx44/userservice/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/org/anjanx44/userservice/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/test/java/org/anjanx44/userservice/GreetingResourceIT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/test/java/org/anjanx44/userservice/GreetingResourceTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,37 +52,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;HTTP Request.generated-requests | #3.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #4.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #5.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #6.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #7.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.user-service [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Quarkus.user-service.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/code/QuarkBook&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "HTTP Request.generated-requests | #3.executor": "Run",
+    "HTTP Request.generated-requests | #4.executor": "Run",
+    "HTTP Request.generated-requests | #5.executor": "Run",
+    "HTTP Request.generated-requests | #6.executor": "Run",
+    "HTTP Request.generated-requests | #7.executor": "Run",
+    "Maven.user-service [clean].executor": "Run",
+    "Quarkus.catalog-service.executor": "Run",
+    "Quarkus.user-service.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/code/QuarkBook/user-service/src/main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "configurable.group.appearance",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\code\QuarkBook\user-service\src\main" />
       <recent name="C:\Users\hp\Documents\GitHub\QuarkBook\catalog-service\src\main\resources" />
     </key>
   </component>
@@ -290,12 +278,27 @@
       <workItem from="1742277201780" duration="122000" />
       <workItem from="1742376108959" duration="2179000" />
       <workItem from="1742624515757" duration="6717000" />
-      <workItem from="1742637629005" duration="892000" />
+      <workItem from="1742637629005" duration="1238000" />
+      <workItem from="1742639294695" duration="6754000" />
+      <workItem from="1742664146683" duration="2748000" />
     </task>
+    <task id="LOCAL-00001" summary="config updated">
+      <option name="closed" value="true" />
+      <created>1742639451134</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1742639451134</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="config updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="config updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
