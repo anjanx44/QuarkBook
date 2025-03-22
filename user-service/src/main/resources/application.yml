@@ -9,9 +9,9 @@ quarkus:
 
     live-reload:
       enabled: true
-#
-#  security:
-#    enabled: true
+  #
+  #  security:
+  #    enabled: true
 
   datasource:
     db-kind: postgresql
@@ -23,20 +23,21 @@ quarkus:
   #Hibernate ORM Configuration
   hibernate-orm:
     database:
-      generation: update
+      generation: drop-and-create
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+
     log:
       sql: true
-      #    dialect: org.hibernate.dialect.PostgreSQLDialect
 
-    # JWT configuration using a secret key for signing and verifying the token
-#  mp:
-#    jwt:
-#      signer:
-#        secret:
-#          key: "V4g6v6Y3f7s2tBxZy8S5Rrz9EdR5KQ0Qf7IcYH0g7Jk="  # Secret key used for signing JWT tokens
-#      verify:
-#        issuer: "my-auth-server"  # Set the issuer (your authentication server)
-#        audience: "my-api"
+# JWT Configuration
+mp:
+  jwt:
+    verify:
+      issuer: "my-auth-server"  # For token verification
+smallrye:
+  jwt:
+    sign:
+      key: "V4g6v6Y3f7s2tBxZy8S5Rrz9EdR5KQ0Qf7IcYH0g7Jk="  # For token signings
 
     # Logging Configuration (Optional)
     quarkus:
