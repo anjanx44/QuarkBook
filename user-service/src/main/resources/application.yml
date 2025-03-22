@@ -1,4 +1,3 @@
-# Database Configuration
 quarkus:
   http:
     port: 8080
@@ -9,9 +8,6 @@ quarkus:
 
     live-reload:
       enabled: true
-  #
-  #  security:
-  #    enabled: true
 
   datasource:
     db-kind: postgresql
@@ -19,8 +15,10 @@ quarkus:
     password: 4796
     jdbc:
       url: jdbc:postgresql://localhost:5432/user_service_db
+    devservices:
+      enabled: false  # 🚀 Disable auto Docker-based database creation
 
-  #Hibernate ORM Configuration
+  # Hibernate ORM Configuration
   hibernate-orm:
     database:
       generation: drop-and-create
@@ -33,18 +31,17 @@ quarkus:
 mp:
   jwt:
     verify:
-      issuer: "my-auth-server"  # For token verification
+      issuer: "my-auth-server"
+
 smallrye:
   jwt:
     sign:
-      key: "V4g6v6Y3f7s2tBxZy8S5Rrz9EdR5KQ0Qf7IcYH0g7Jk="  # For token signings
+      key: "V4g6v6Y3f7s2tBxZy8S5Rrz9EdR5KQ0Qf7IcYH0g7Jk="
 
-    # Logging Configuration (Optional)
-    quarkus:
-      log:
-        console:
-          level: INFO
-        category:
-          io:
-            quarkus: TRACE
-
+# Logging Configuration
+  log:
+    console:
+      level: INFO
+    category:
+      io:
+        quarkus: TRACE
