@@ -1,9 +1,12 @@
 package org.anjanx44.userservice.controller;
 
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import lombok.RequiredArgsConstructor;
+import org.anjanx44.userservice.dto.LoginRequest;
+import org.anjanx44.userservice.dto.TokenResponse;
 import org.anjanx44.userservice.entity.User;
 import org.anjanx44.userservice.service.UserService;
 
@@ -24,6 +27,7 @@ public class UserController {
 
     @GET
     @Path("/{id}")
+    @RolesAllowed("user") // Only authenticated users with "user" role can access
     public Response getUser(@PathParam("id") Long id) {
         Optional<User> user = userService.getUserById(id);
 
@@ -36,6 +40,7 @@ public class UserController {
 
     @PUT
     @Path("/{id}")
+    @RolesAllowed("user")
     public Response updateUser(@PathParam("id") Long id, User  userDetails){
         try {
             User updatedUser = userService.updateUser(id, userDetails);
@@ -47,6 +52,7 @@ public class UserController {
 
     @DELETE
     @Path("/{id}")
+    @RolesAllowed("user")
     public Response deleteUser(@PathParam("id") Long id) {
         try {
             return userService.deleteUser(id);
@@ -55,4 +61,14 @@ public class UserController {
         }
     }
 
+    @POST
+    @Path("/login")
+    public Response login(LoginRequest loginRequest) {
+        try {
+            String token = userService.login(loginRequest.getUsername(), loginRequest.getPassword());
+            return Response.ok(new TokenResponse(token)).build();
+        } catch (NotFoundException e) {
+            return Response.status(Response.Status.UNAUTHORIZED).entity("Invalid credentials").build();
+        }
+    }
 }

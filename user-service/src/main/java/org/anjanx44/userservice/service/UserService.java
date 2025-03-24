@@ -1,5 +1,6 @@
 package org.anjanx44.userservice.service;
 
+import io.smallrye.jwt.build.Jwt; // Use Jwt instead of BuildJwt
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.NotFoundException;
@@ -8,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.anjanx44.userservice.entity.User;
 import org.anjanx44.userservice.repository.UserRepository;
 
+import java.util.Collections; // For single role as a Set
 import java.util.Optional;
 
 @ApplicationScoped
@@ -47,4 +49,17 @@ public class UserService {
         return Response.ok().build();
     }
 
+    public String login(String username, String password) {
+        User user = userRepository.find("username", username).firstResult();
+        if (user == null || !user.getPassword().equals(password)) {
+            throw new NotFoundException("Invalid credentials");
+        }
+
+        return Jwt
+                .issuer("my-auth-server")               // Issuer
+                .subject(user.getUsername())            // Subject (user identifier)
+                .groups(Collections.singleton("user"))  // Single role as a Set
+                .expiresIn(3600)                        // Expires in 1 hour
+                .sign();                                // Sign with configured key
+    }
 }
