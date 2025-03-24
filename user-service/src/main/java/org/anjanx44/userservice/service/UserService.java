@@ -58,16 +58,9 @@ public class UserService {
             throw new NotFoundException("Invalid credentials");
         }
 
-//        return Jwt
-////                .issuer("https://example.com/issuer")    // Issuer
-//                .subject(user.getUsername())            // Subject (user identifier)
-//                .groups(Collections.singleton("user"))  // Single role as a Set
-//                .expiresIn(3600)                        // Expires in 1 hour
-//                .sign();
-
         String token = Jwt.issuer("https://example.com/issuer")
-                .upn("jdoe@quarkus.io")
-                .groups(new HashSet<>(Arrays.asList("User", "Admin")))
+                .upn(user.getUsername())
+                .groups(new HashSet<>(Arrays.asList("user", "admin")))
                 .claim(Claims.birthdate.name(), "2001-07-13")
                 .sign();// Sign with configured key
 
