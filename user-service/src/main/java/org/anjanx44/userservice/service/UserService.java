@@ -8,8 +8,11 @@ import jakarta.ws.rs.core.Response;
 import lombok.RequiredArgsConstructor;
 import org.anjanx44.userservice.entity.User;
 import org.anjanx44.userservice.repository.UserRepository;
+import org.eclipse.microprofile.jwt.Claims;
 
+import java.util.Arrays;
 import java.util.Collections; // For single role as a Set
+import java.util.HashSet;
 import java.util.Optional;
 
 @ApplicationScoped
@@ -55,11 +58,19 @@ public class UserService {
             throw new NotFoundException("Invalid credentials");
         }
 
-        return Jwt
-                .issuer("my-auth-server")               // Issuer
-                .subject(user.getUsername())            // Subject (user identifier)
-                .groups(Collections.singleton("user"))  // Single role as a Set
-                .expiresIn(3600)                        // Expires in 1 hour
-                .sign();                                // Sign with configured key
+//        return Jwt
+////                .issuer("https://example.com/issuer")    // Issuer
+//                .subject(user.getUsername())            // Subject (user identifier)
+//                .groups(Collections.singleton("user"))  // Single role as a Set
+//                .expiresIn(3600)                        // Expires in 1 hour
+//                .sign();
+
+        String token = Jwt.issuer("https://example.com/issuer")
+                .upn("jdoe@quarkus.io")
+                .groups(new HashSet<>(Arrays.asList("User", "Admin")))
+                .claim(Claims.birthdate.name(), "2001-07-13")
+                .sign();// Sign with configured key
+
+        return token;
     }
 }
